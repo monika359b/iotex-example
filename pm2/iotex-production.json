@@ -1,0 +1,12 @@
+{
+    "apps": [{
+        "name": "iotex-production",
+        "script": "./index.js",
+        "log_date_format": "YYYY-MM-DD HH:mm:ss SSS",
+        "env": {
+            "NODE_ENV": "production"
+        },
+        "output": "/tmp/wwwlogs/iotex-production/out.log",
+        "error": "/tmp/wwwlogs/iotex-production/error.log"
+    }]
+}
