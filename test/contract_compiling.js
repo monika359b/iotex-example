@@ -17,7 +17,7 @@ contract SimpleStorage {
 `;
 const contractName = ":SimpleStorage";
 const output = solc.compile(solidityFileString, 1);
-const abi = JSON.parse(output.contracts[contractName].interface);
+const abi = output.contracts[contractName].interface;
 const bytecode = output.contracts[contractName].bytecode;
 console.log('abi: ', abi)
 console.log('bytecode: ', bytecode)

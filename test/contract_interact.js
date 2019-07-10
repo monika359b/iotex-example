@@ -4,7 +4,8 @@ const { Contract } = require('iotex-antenna/lib/contract/contract')
 async function example() {
     const antenna = new Antenna("http://api.testnet.iotex.one:80");
 
-    const sender = antenna.iotx.accounts.privateKeyToAccount("73c7b4a62bf165dccf8ebdea8278db811efd5b8638e2ed9683d2d94889450426");
+    const sender = antenna.iotx.accounts.privateKeyToAccount("de9aceeb2a4a88ea4405254ec471c2c4a510f7df4b9618ab6aad69535c05320f");
+    // contract address: io12g2flcjxuf895rr8eacqlljfp0mrtr88ap7zpq
 
     const contract = new Contract(
         [{
@@ -24,7 +25,7 @@ async function example() {
             "stateMutability": "view",
             "type": "function"
         }],
-        "io186s45j3rgvhxh25ec6xk9wap0drtthk3jq4du7",
+        "io12g2flcjxuf895rr8eacqlljfp0mrtr88ap7zpq",
         {
             provider: antenna.iotx
         }
@@ -35,10 +36,11 @@ async function example() {
         gasLimit: "1000000",
         gasPrice: "1000000000000"
     });
+    console.log('actionHash: ', actionHash)
 
     const getResult = await antenna.iotx.readContractByMethod({
         from: sender.address,
-        contractAddress: "io186s45j3rgvhxh25ec6xk9wap0drtthk3jq4du7",
+        contractAddress: "io12g2flcjxuf895rr8eacqlljfp0mrtr88ap7zpq",
         abi: [{
             "constant": false,
             "inputs": [{ "name": "x", "type": "uint256" }],
@@ -58,6 +60,7 @@ async function example() {
         }],
         method: "get"
     });
+    console.log('getResult: ', getResult)
 }
 
 example()
