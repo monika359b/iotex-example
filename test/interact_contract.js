@@ -1,4 +1,4 @@
-const Antenna = require('iotex-antenna')
+const Antenna = require('iotex-antenna').default
 const { Contract } = require('iotex-antenna/lib/contract/contract')
 
 async function example() {

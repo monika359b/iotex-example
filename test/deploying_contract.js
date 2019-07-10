@@ -1,4 +1,5 @@
-import Antenna from "iotex-antenna";
+const Antenna = require('iotex-antenna').default
+const {toRau} = require('iotex-antenna/lib/account/utils')
 
 async function example() {
     const antenna = new Antenna("http://api.testnet.iotex.one:80");
