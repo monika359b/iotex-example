@@ -31,12 +31,13 @@ async function example() {
         }
     );
 
-    const actionHash = await contract.methods.set(101, {
+    const actionHash = await contract.methods.set(5201314, {
         account: sender,
         gasLimit: "1000000",
         gasPrice: "1000000000000"
     });
     console.log('actionHash: ', actionHash)
+    // actionHash:  12133445cf3a03efe35f1d8e6006e9b1819542ed46a8d7119101d6b8b8d1a792
 
     const getResult = await antenna.iotx.readContractByMethod({
         from: sender.address,
@@ -60,7 +61,8 @@ async function example() {
         }],
         method: "get"
     });
-    console.log('getResult: ', getResult)
+    console.log('getResult: ', getResult.toString())
+    // getResult:  5201314
 }
 
 example()
