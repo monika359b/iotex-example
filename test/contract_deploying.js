@@ -34,3 +34,8 @@ async function example() {
 }
 
 example()
+
+
+
+//  if a error happen like Unexpected token o in JSON
+//  see:    https://blog.csdn.net/Bambi12/article/details/77850948
