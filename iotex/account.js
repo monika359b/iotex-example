@@ -12,7 +12,7 @@ router.use(function timeLog(req, res, next) {
     next()
 })
 
-router.post('/generateAccount', async function (req, res) {
+router.get('/generateAccount', async function (req, res) {
     const data = antenna.iotx.accounts.create()
 
     res.json({
